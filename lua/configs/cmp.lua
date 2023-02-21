@@ -6,24 +6,24 @@ lspkind.init({
 local cmp = require("cmp")
 cmp.setup({
   mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select}),
-    ['<C-n>'] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select}),
-    ['<Tab>'] = cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select}),
-    ['<Cr>'] = cmp.mapping.confirm({select = true}),
+    ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<Cr>"] = cmp.mapping.confirm({ select = true }),
   },
   completion = {
-    completeopt = 'menu,menuone,noinsert'
+    completeopt = "menu,menuone,noinsert",
   },
   sources = {
     { name = "nvim_lsp" },
     { name = "path" },
     { name = "buffer", keyword_length = 5 },
-    { name = "nvim_lsp_signature_help", },
+    { name = "nvim_lsp_signature_help" },
   },
   snippet = {
     -- Need a snippet engine to auto complete
     expand = function(args)
-      require 'luasnip'.lsp_expand(args.body) -- For `luasnip` users.
+      require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   formatting = {
@@ -38,12 +38,12 @@ cmp.setup({
     }),
   },
   window = {
-    completion = cmp.config.window.bordered {
-      winhighlight = 'Search:None' -- "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-    },
-    documentation = cmp.config.window.bordered {
-      winhighlight = 'Search:None' -- "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-    },
+    completion = cmp.config.window.bordered({
+      winhighlight = "Search:None", -- "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+    }),
+    documentation = cmp.config.window.bordered({
+      winhighlight = "Search:None", -- "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+    }),
   },
 
   experimental = {

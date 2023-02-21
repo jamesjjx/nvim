@@ -1,5 +1,5 @@
 local M = {}
 
-M.theme = 'nord'
+M.theme = "nord"
 
 return M
