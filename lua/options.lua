@@ -5,6 +5,7 @@ local fn = vim.fn
 opt.expandtab = true
 opt.shiftwidth = 2
 opt.softtabstop = 2
+g.python_recommended_style = 0
 opt.ignorecase = true
 opt.hlsearch = true
 opt.incsearch = true
