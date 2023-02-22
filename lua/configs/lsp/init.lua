@@ -7,3 +7,4 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 
 -- LSP servers.
 require("configs.lsp.sumneko_lua")
+require("configs.lsp.python")
