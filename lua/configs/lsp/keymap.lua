@@ -2,7 +2,7 @@ local M = {}
 
 M.on_attach = function(client, bufnr)
   local use_telescope = true
-  local set_key = function (mode, lhs, rhs, desc)
+  local set_key = function(mode, lhs, rhs, desc)
     vim.keymap.set(mode, lhs, rhs, { noremap = true, silent = true, buffer = bufnr, desc = desc })
   end
   local opts = { noremap = true, silent = true }
@@ -29,13 +29,13 @@ M.on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 
   -- Code formatting. Doesn't seem to work with ciderlsp.
-  set_key('n', '<leader>l', function()
+  set_key("n", "<leader>l", function()
     local line = vim.api.nvim_win_get_cursor(0)[1]
     vim.lsp.buf.format({
-      range = { ['start'] = { line, 0 }, ['end'] = { line, 1000 }, }
+      range = { ["start"] = { line, 0 }, ["end"] = { line, 1000 } },
     })
-  end, 'LSP line formatting')
-  set_key('x', 'gl', vim.lsp.buf.format, 'LSP range formatting')
+  end, "LSP line formatting")
+  set_key("x", "gl", vim.lsp.buf.format, "LSP range formatting")
 end
 
 return M
