@@ -8,12 +8,24 @@ local function map(key, cmd, desc)
   vim.keymap.set("n", key, cmd, { noremap = true, desc = desc })
 end
 
-map("<leader>h", function()
+map("<Leader>t", ":Telescope<cr>")
+
+map("<leader>fh", function()
   builtin.find_files({ cwd = utils.buffer_dir() })
 end, "files in the working dir")
-map("<leader>f", function()
+
+map("<leader>ff", function()
   builtin.find_files({ find_command = { "rg", "--files", "--hidden" } })
-end, "find files")
-map("<leader>bf", function()
+end, "telescope.builtin.find_files")
+
+map("<leader>fb", function()
   builtin.buffers({ sort_lastused = true })
-end, "open buffers")
+end, "telescope.builtin.buffers")
+
+map("<leader>fg", function()
+  builtin.live_grep()
+end, "telescope.builtin.live_grep")
+
+map("<leader>fr", function()
+  builtin.resume()
+end, "telescope.builtin.resume")

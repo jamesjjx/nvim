@@ -54,8 +54,6 @@ map("n", "<Right>", "<C-PageDown>")
 -- sort.
 map("n", "<Leader>s", "vip:sort u<cr>")
 
-map("n", "<Leader>t", ":Telescope<cr>")
-
 -- Command-line mode.
 map("c", "<C-A>", "<Home>")
 
