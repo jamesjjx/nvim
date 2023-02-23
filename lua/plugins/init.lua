@@ -17,6 +17,9 @@ local plugins = {
     "gbprod/nord.nvim",
     priority = 1000,
     lazy = false,
+    config = function()
+      require("configs.nord").setup()
+    end
   },
   {
     "nvim-lualine/lualine.nvim",
