@@ -9,7 +9,7 @@ cmp.setup({
     ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
     ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
     ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-    ["<C-y>"] = cmp.mapping.confirm({select = true}),
+    ["<C-y>"] = cmp.mapping.confirm({ select = true }),
   },
   completion = {
     completeopt = "menu,menuone,noinsert",

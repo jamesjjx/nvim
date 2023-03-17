@@ -5,6 +5,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
   update_in_insert = false,
 })
 
--- LSP servers.
-require("configs.lsp.sumneko_lua")
+-- LSP servers. Can be installed with :MasonInstall.
+require("configs.lsp.lua")
 require("configs.lsp.python")

@@ -19,7 +19,7 @@ local plugins = {
     lazy = false,
     config = function()
       require("configs.nord").setup()
-    end
+    end,
   },
   {
     "nvim-lualine/lualine.nvim",
@@ -100,7 +100,10 @@ local plugins = {
       require("configs.cmp")
     end,
   },
-  "neovim/nvim-lspconfig",
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = { "folke/neodev.nvim" },
+  },
   {
     "folke/trouble.nvim",
     dependencies = { "kyazdani42/nvim-web-devicons" },
@@ -179,6 +182,9 @@ local plugins = {
     config = function()
       require("configs.lsp.null_ls")
     end,
+  },
+  {
+    "folke/neodev.nvim",
   },
 }
 
