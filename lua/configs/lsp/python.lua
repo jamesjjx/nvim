@@ -7,4 +7,18 @@ end
 
 require("lspconfig").pylsp.setup({
   on_attach = require("configs.lsp.keymap").on_attach,
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          enabled = true,
+          ignore = {
+            "E111", -- indent
+            "E114", -- comment indent
+            "E501", -- long too long
+          },
+        },
+      },
+    },
+  },
 })
