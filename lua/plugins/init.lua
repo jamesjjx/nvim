@@ -186,6 +186,16 @@ local plugins = {
   {
     "folke/neodev.nvim",
   },
+  {
+    "projekt0n/circles.nvim",
+    dependencies = { "kyazdani42/nvim-web-devicons" },
+  },
+  {
+    "luukvbaal/statuscol.nvim",
+    config = function()
+      require("configs.statuscol")
+    end
+  },
 }
 
 require("lazy").setup(plugins, {

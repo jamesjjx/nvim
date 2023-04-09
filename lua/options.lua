@@ -15,7 +15,7 @@ opt.undofile = true
 -- Set filename (instead of full path) as the tab filename
 opt.guitablabel = "%t%m"
 opt.nu = true
-opt.signcolumn = "no"
+opt.rnu = true
 opt.mouse = "a"
 -- Keep at least so many lines on the top or on the bottom.
 opt.scrolloff = 5
