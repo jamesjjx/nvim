@@ -18,7 +18,12 @@ opt.nu = true
 opt.rnu = true
 opt.mouse = "a"
 -- Keep at least so many lines on the top or on the bottom.
-opt.scrolloff = 5
+opt.scrolloff = 10
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = 'qf',
+  command = "setlocal scrolloff=0",
+})
+
 opt.termguicolors = true
 
 local group = vim.api.nvim_create_augroup("cursor_line_in_active_window", { clear = true })
