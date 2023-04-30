@@ -23,13 +23,15 @@ local plugins = {
   },
   {
     "nvim-lualine/lualine.nvim",
-    dependencies = { "kyazdani42/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("configs.lualine")
     end,
   },
   "christoomey/vim-tmux-navigator",
   "vim-scripts/file-line",
+  "wsdjeg/vim-fetch",
+
   --Plug 'roxma/vim-paste-easy'
   {
     "mhinz/vim-signify",
@@ -106,7 +108,7 @@ local plugins = {
   },
   {
     "folke/trouble.nvim",
-    dependencies = { "kyazdani42/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("configs.trouble")
     end,
@@ -188,13 +190,51 @@ local plugins = {
   },
   {
     "projekt0n/circles.nvim",
-    dependencies = { "kyazdani42/nvim-web-devicons" },
+    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   {
     "luukvbaal/statuscol.nvim",
     config = function()
       require("configs.statuscol")
-    end
+    end,
+    commit = "34b967edc2fa325ba4a9347256189b31e3aab11e",
+  },
+  {
+    "ibhagwan/fzf-lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+  {
+    "otavioschwanck/telescope-alternate.nvim",
+    config = function()
+      require("telescope-alternate").setup({
+        mappings = {
+          {
+            "(.*)/(.*).cc$",
+            {
+              { "[1]/[2].h", "header" },
+              { "[1]/[2]_test.cc", "test" },
+            },
+          },
+          {
+            "(.*)/(.*).h$",
+            {
+              { "[1]/[2].cc", "cc" },
+              { "[1]/[2]_test.cc", "test" },
+            },
+          },
+          {
+            "(.*)/(.*)_test.cc$",
+            {
+              { "[1]/[2].cc", "cc" },
+              { "[1]/[2].h", "header" },
+            },
+          },
+        },
+      })
+      vim.keymap.set("n", "<leader>fa", ":Telescope telescope-alternate alternate_file<cr>")
+      require("telescope").load_extension("telescope-alternate")
+    end,
+    dependencies = { "nvim-telescope/telescope.nvim" },
   },
 }
 
