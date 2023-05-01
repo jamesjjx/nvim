@@ -29,7 +29,6 @@ local plugins = {
     end,
   },
   "christoomey/vim-tmux-navigator",
-  "vim-scripts/file-line",
   "wsdjeg/vim-fetch",
 
   --Plug 'roxma/vim-paste-easy'
