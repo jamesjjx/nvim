@@ -12,7 +12,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  "lukas-reineke/indent-blankline.nvim",
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    config = function()
+      require("indent_blankline").setup({
+        show_current_context = true,
+      })
+    end,
+  },
   {
     "gbprod/nord.nvim",
     priority = 1000,
@@ -239,4 +246,5 @@ local plugins = {
 
 require("lazy").setup(plugins, {
   ui = { border = "rounded" },
+  install = { colorscheme = { "nord" } },
 })
