@@ -6,7 +6,6 @@ if not exists then
 end
 
 require("lspconfig").pylsp.setup({
-  on_attach = require("configs.lsp.keymap").on_attach,
   settings = {
     pylsp = {
       plugins = {
