@@ -1,6 +1,3 @@
-vim.g.mapleader = " "
-require("plugins")
-require("options")
-require("configs.lsp")
+require("config.lazy")
 
-vim.cmd.colorscheme("nord")
+require("lspconfig.ui.windows").default_options.border = "rounded"

@@ -1,0 +1,86 @@
+local cmp = require("cmp")
+
+return {
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = {
+      scope = {
+        enabled = true,
+        show_start = false,
+        show_end = false,
+        highlight = { "Function", "Label" },
+      },
+    },
+  },
+  {
+    "folke/noice.nvim",
+    opts = {
+      messages = {
+        view_search = false,
+      },
+      -- you can enable a preset for easier configuration
+      presets = {
+        long_message_to_split = false, -- long messages will be sent to a split
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = true, -- add a border to hover docs and signature help
+      },
+    },
+  },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      icons = {
+        diagnostics = {
+          Error = "●",
+          Warn = "●",
+          Hint = "●",
+          Info = "●",
+        },
+      },
+    },
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      window = {
+        completion = cmp.config.window.bordered({
+          winhighlight = "Search:None", -- "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+        }),
+        documentation = cmp.config.window.bordered({
+          winhighlight = "Search:None", -- "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
+        }),
+      },
+    },
+  },
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      options = {
+        theme = "nord",
+        icons_enabled = false,
+        globalstatus = false,
+      },
+      sections = {
+        lualine_c = {
+          {
+            "filename",
+            file_status = true,
+            newfile_status = true,
+            path = 1,
+          },
+        },
+        lualine_z = {},
+      },
+      inactive_sections = {
+        lualine_c = {
+          {
+            "filename",
+            file_status = true,
+            newfile_status = true,
+            path = 1,
+          },
+        },
+      },
+    },
+  },
+}
