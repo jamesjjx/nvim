@@ -10,4 +10,7 @@ opt.swapfile = false
 opt.splitright = false
 opt.splitbelow = false
 
+-- Disable format on save.
+vim.g.autoformat = false
+
 -- vim.g.python_recommended_style = 0

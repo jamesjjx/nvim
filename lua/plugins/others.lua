@@ -1,5 +1,4 @@
 return {
-  "christoomey/vim-tmux-navigator",
   "wsdjeg/vim-fetch",
   {
     "ojroques/nvim-osc52",
@@ -18,9 +17,30 @@ return {
   },
   {
     "ibhagwan/fzf-lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+      "nvim-telescope/telescope.nvim",
+    },
     opts = {
       "telescope",
+      fzf_colors = {
+        ["fg"] = { "fg", "FzfLuaFg" },
+        ["bg"] = { "bg", "FzfLuaBg" },
+        ["hl"] = { "fg", "FzfLuaHl" },
+        ["fg+"] = { "fg", "FzfLuaFgPlus" },
+        ["bg+"] = { "bg", "FzfLuaBgPlus" },
+        ["hl+"] = { "fg", "FzfLuaHlPlus" },
+        ["info"] = { "fg", "FzfLuaInfo" },
+        ["border"] = { "fg", "FzfLuaBorder" },
+        ["gutter"] = { "bg", "FzfLuaGutter" },
+        ["prompt"] = { "fg", "FzfLuaPrompt" },
+        ["pointer"] = { "fg", "FzfLuaPointer" },
+        ["marker"] = { "fg", "FzfLuaMarker" },
+        ["header"] = { "fg", "FzfLuaHeader" },
+      },
+      files = {
+        file_icons = false,
+      },
     },
   },
   {
