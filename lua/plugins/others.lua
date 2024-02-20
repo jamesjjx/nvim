@@ -9,6 +9,7 @@ return {
         end
       end
       vim.api.nvim_create_autocmd("TextYankPost", { callback = copy })
+      require("osc52").setup({ tmux_passthrough = true })
     end,
   },
   {
