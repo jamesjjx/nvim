@@ -1,5 +1,3 @@
-local cmp = require("cmp")
-
 return {
   {
     "lukas-reineke/indent-blankline.nvim",
@@ -42,19 +40,6 @@ return {
           Hint = "●",
           Info = "●",
         },
-      },
-    },
-  },
-  {
-    "hrsh7th/nvim-cmp",
-    opts = {
-      window = {
-        completion = cmp.config.window.bordered({
-          winhighlight = "Search:None", -- "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-        }),
-        documentation = cmp.config.window.bordered({
-          winhighlight = "Search:None", -- "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None",
-        }),
       },
     },
   },
