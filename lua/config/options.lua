@@ -12,6 +12,8 @@ opt.splitbelow = false
 
 opt.wrap = true
 
+opt.statuscolumn = '%l%s'
+
 -- Disable format on save.
 vim.g.autoformat = false
 

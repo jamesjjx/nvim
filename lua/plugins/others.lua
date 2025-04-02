@@ -13,10 +13,6 @@ return {
     end,
   },
   {
-    "projekt0n/circles.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-  {
     "ibhagwan/fzf-lua",
     dependencies = {
       "nvim-tree/nvim-web-devicons",
@@ -76,23 +72,6 @@ return {
       require("telescope").load_extension("telescope-alternate")
     end,
     dependencies = { "nvim-telescope/telescope.nvim" },
-  },
-  {
-    "luukvbaal/statuscol.nvim",
-    opts = function()
-      local builtin = require("statuscol.builtin")
-      return {
-        relculright = true,
-        segments = {
-          { text = { builtin.lnumfunc }, click = "v:lua.ScLa" },
-          { sign = { name = { "Signify" }, maxwidth = 1, colwidth = 1 } },
-          {
-            sign = { name = { ".*" }, maxwidth = 1, colwidth = 2 },
-            click = "v:lua.ScSa",
-          },
-        },
-      }
-    end,
   },
   {
     "mhinz/vim-signify",
