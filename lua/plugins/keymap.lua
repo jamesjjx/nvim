@@ -48,12 +48,17 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-
-    init = function()
-      -- https://www.lazyvim.org/plugins/lsp#%EF%B8%8F-customizing-lsp-keymaps
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      keys[#keys + 1] = { "<leader>cl", false }
-    end,
+    -- https://www.lazyvim.org/plugins/lsp#%EF%B8%8F-customizing-lsp-keymaps
+    opts = {
+      servers = {
+        ['*'] = {
+          keys = {
+            -- Disable a keymap
+            { "<leader>cl", false },
+          },
+        },
+      },
+    },
   },
   {
     "stevearc/conform.nvim",
